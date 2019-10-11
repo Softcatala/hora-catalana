@@ -92,19 +92,19 @@ function get_article(hour) {
 }
 
 function get_hour(hour) {
-	
-	if (hour == 1 || hour == 13) return "una";
-	if (hour == 2 || hour == 14) return "dues";
-	if (hour == 3 || hour == 15) return "tres";
-	if (hour == 4 || hour == 16) return "quatre";
-	if (hour == 5 || hour == 17) return "cinc";
-	if (hour == 6 || hour == 18) return "sis";
-	if (hour == 7 || hour == 19) return "set";
-	if (hour == 8 || hour == 20) return "vuit";
-	if (hour == 9 || hour == 21) return "nou";
-	if (hour == 10 || hour == 22) return "deu";
-	if (hour == 11 || hour == 23) return "onze";
-	if (hour == 12 || hour == 0) return "dotze"
+
+    if (hour == 1 || hour == 13) return "una";
+    if (hour == 2 || hour == 14) return "dues";
+    if (hour == 3 || hour == 15) return "tres";
+    if (hour == 4 || hour == 16) return "quatre";
+    if (hour == 5 || hour == 17) return "cinc";
+    if (hour == 6 || hour == 18) return "sis";
+    if (hour == 7 || hour == 19) return "set";
+    if (hour == 8 || hour == 20) return "vuit";
+    if (hour == 9 || hour == 21) return "nou";
+    if (hour == 10 || hour == 22) return "deu";
+    if (hour == 11 || hour == 23) return "onze";
+    if (hour == 12 || hour == 0) return "dotze"
 
     return "no sé noi"
 }
