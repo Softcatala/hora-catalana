@@ -121,6 +121,21 @@ function get_text_hora(hours, minutes, seconds) {
     return hours + ":" + minutes + ":" + seconds;
 }
 
+function get_all_times(hours, min) {
+
+    var list = "";
+    for (min = 0; min <= 59; min++) {
+        if (min < 10) {
+            var m = "0" + min;
+        }
+        else {
+            var m = min;
+        }
+        list += hours + ":" + m + " > " + get_time(hours, min) + "<br>";
+    }
+    return list;
+}
+
 
 function start_timer() {
     
@@ -138,21 +153,7 @@ function start_timer() {
 
             element = document.getElementById("text");
             element.innerHTML = text;
-/**
-  
-            var list = "";
-            for (min = 0; min <= 60; min++) {
-                if (min < 10) {
-                    var m = "0" + min;
-                }
-                else {
-                    var m = min;
-                }
-
-                list += hours + ":" + m + " > " + get_time(hours, min) + "<br>";
-            }
-            element.innerHTML = list;
-**/
+//            element.innerHTML = get_all_times(hours, minutes);
 
          }, 1000);
 }
