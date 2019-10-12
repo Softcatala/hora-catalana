@@ -115,6 +115,12 @@ function get_hour(hour) {
     return "no sé noi"
 }
 
+function get_text_hora(hours, minutes, seconds) {
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    return hours + ":" + minutes + ":" + seconds;
+}
+
 
 function start_timer() {
     
@@ -125,12 +131,10 @@ function start_timer() {
             var minutes = today.getMinutes();
             var seconds = today.getSeconds();
     
-            var text = get_time(hours, minutes);
+            var text = get_time(hours, minutes) + (" (sistema campanar)");
 
             var element = document.getElementById("hora");
-            minutes = minutes < 10 ? '0'+ minutes : minutes;
-            seconds = seconds < 10 ? '0'+ seconds : seconds;
-            element.innerHTML = hours + ":" + minutes + ":" + seconds;
+            element.innerHTML = get_text_hora(hours, minutes, seconds);
 
             element = document.getElementById("text");
             element.innerHTML = text;
