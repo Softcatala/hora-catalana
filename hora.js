@@ -57,18 +57,17 @@ function get_time(hour, minute) {
     if (minute == 46) return "Tres quarts i un minut " + get_de(hour) + " " + get_hour(hour);
     if (minute == 47) return "Tres quarts i dos minuts " + get_de(hour) + " " + get_hour(hour);
     if (minute == 48) return "Tres quarts i tres minuts " + get_de(hour) + " " + get_hour(hour);
-    if (minute == 59) return "Tres quarts i quatre minuts " + get_de(hour) + " " + get_hour(hour);
+    if (minute == 49) return "Tres quarts i quatre minuts " + get_de(hour) + " " + get_hour(hour);
     if (minute == 50) return "Tres quarts i cinc minuts " + get_de(hour) + " " + get_hour(hour);
     if (minute == 51) return "Tres quarts i sis minuts " + get_de(hour) + " " + get_hour(hour);
     if (minute == 52) return "Tres quarts i mig " + get_de(hour) + " " + get_hour(hour);
-    if (minute == 53) return "Set minuts per a " + get_de(hour) + " " + get_hour(hour);
-    if (minute == 54) return "Sis minuts per a " + get_de(hour) + " " + get_hour(hour);
-    if (minute == 55) return "Cinc minuts per a " + get_de(hour) + " " + get_hour(hour);
-
-    if (minute == 56) return "Quatre minuts per a " + get_article(hour) + " " + get_hour(hour);
-    if (minute == 57) return "Tres minuts per a " + get_article(hour) + " " + get_hour(hour);
-    if (minute == 58) return "Dos minuts per a " + get_article(hour) + " " + get_hour(hour);
-    if (minute == 59) return "Un minut per a " + get_article(hour) + " " + get_hour(hour);
+    if (minute == 53) return "Set minuts per a " + get_article_lower(hour) + " " + get_hour(hour);
+    if (minute == 54) return "Sis minuts per a " + get_article_lower(hour) + " " + get_hour(hour);
+    if (minute == 55) return "Cinc minuts per a " + get_article_lower(hour) + " " + get_hour(hour);
+    if (minute == 56) return "Quatre minuts per a " + get_article_lower(hour) + " " + get_hour(hour);
+    if (minute == 57) return "Tres minuts per a " + get_article_lower(hour) + " " + get_hour(hour);
+    if (minute == 58) return "Dos minuts per a " + get_article_lower(hour) + " " + get_hour(hour);
+    if (minute == 59) return "Un minut per a " + get_article_lower(hour) + " " + get_hour(hour);
 
 
     return "i molt de temps";
@@ -90,6 +89,13 @@ function get_article(hour) {
 
     return "Les";
 }
+
+function get_article_lower(hour) {
+
+    var s = get_article(hour);
+    return s.charAt(0).toLowerCase() + s.slice(1)
+}
+
 
 function get_hour(hour) {
 
@@ -128,7 +134,7 @@ function start_timer() {
 
             element = document.getElementById("text");
             element.innerHTML = text;
-/*
+/**
   
             var list = "";
             for (min = 0; min <= 60; min++) {
@@ -142,7 +148,7 @@ function start_timer() {
                 list += hours + ":" + m + " > " + get_time(hours, min) + "<br>";
             }
             element.innerHTML = list;
-*/
+**/
 
          }, 1000);
 }
