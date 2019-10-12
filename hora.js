@@ -3,7 +3,7 @@
 // Sistema campanar
 function get_time(hour, minute) {
 
-    if (minute > 10)
+    if (minute >= 10)
         hour = hour + 1;
 
     if (minute == 0) return get_article(hour) + " " + get_hour(hour) + " en punt";
@@ -30,8 +30,8 @@ function get_time(hour, minute) {
     if (minute == 20) return "Un quart i cinc " + get_de(hour) + " " + get_hour(hour);
     if (minute == 21) return "Un quart i sis " + get_de(hour) + " " + get_hour(hour);
     if (minute == 22) return "Un quart i mig " + get_de(hour) + " " + get_hour(hour);
-    if (minute == 23) return "Dos minuts per a dos quarts " + get_de(hour)  + " " + get_hour(hour);
-    if (minute == 24) return "Tres minuts per a dos quarts " + get_de(hour)  + " " + get_hour(hour);
+    if (minute == 23) return "Set minuts per a dos quarts " + get_de(hour)  + " " + get_hour(hour);
+    if (minute == 24) return "Sis minuts per a dos quarts " + get_de(hour)  + " " + get_hour(hour);
     if (minute == 25) return "Cinc minuts per a dos quarts " + get_de(hour)  + " " + get_hour(hour);
     if (minute == 26) return "Quatre minuts per a dos quarts " + get_de(hour)  + " " + get_hour(hour);
     if (minute == 27) return "Tres minuts per a dos quarts " + get_de(hour)  + " " + get_hour(hour);
@@ -153,7 +153,7 @@ function start_timer() {
 
             element = document.getElementById("text");
             element.innerHTML = text;
-//            element.innerHTML = get_all_times(hours, minutes);
+            element.innerHTML = get_all_times(hours, minutes);
 
          }, 1000);
 }
