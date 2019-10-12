@@ -110,7 +110,6 @@ function get_hour(hour) {
 }
 
 
-
 function start_timer() {
     
     const interval = setInterval(function() {
@@ -120,9 +119,6 @@ function start_timer() {
             var minutes = today.getMinutes();
             var seconds = today.getSeconds();
     
-            hours = 19;
-            minutes = 15;
-
             var text = get_time(hours, minutes);
 
             var element = document.getElementById("hora");
@@ -130,7 +126,8 @@ function start_timer() {
 
             element = document.getElementById("text");
             element.innerHTML = text;
-
+/*
+  
             var list = "";
             for (min = 0; min <= 60; min++) {
                 if (min < 10) {
@@ -143,6 +140,7 @@ function start_timer() {
                 list += hours + ":" + m + " > " + get_time(hours, min) + "<br>";
             }
             element.innerHTML = list;
+*/
 
          }, 1000);
 }
