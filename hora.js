@@ -122,6 +122,8 @@ function start_timer() {
             var text = get_time(hours, minutes);
 
             var element = document.getElementById("hora");
+            minutes = minutes < 10 ? '0'+ minutes : minutes;
+            seconds = seconds < 10 ? '0'+ seconds : seconds;
             element.innerHTML = hours + ":" + minutes + ":" + seconds;
 
             element = document.getElementById("text");
