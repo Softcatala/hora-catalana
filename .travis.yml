@@ -1,0 +1,5 @@
+install:
+  - sudo apt-get update -y
+  - sudo apt-get install yarnpkg -y 
+script:
+  - yarnpkg jest

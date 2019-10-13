@@ -76,6 +76,10 @@ function get_time_campanar(hour, minute) {
 
 function get_time_rellotge(hour, minute) {
 
+    if (minute > 30)
+        hour = hour + 1;
+
+
     if (minute == 0) return get_article(hour) + " " + get_hour(hour) + " en punt";
     if (minute == 1) return get_article(hour) + " " + get_hour(hour) + " i un (minut)";
     if (minute == 2) return get_article(hour) + " " + get_hour(hour) + " i dos (minuts)";
@@ -109,36 +113,36 @@ function get_time_rellotge(hour, minute) {
     if (minute == 29) return get_article(hour) + " " + get_hour(hour) + " i vint-i-nou (minuts)";
     if (minute == 30) return get_article(hour) + " " + get_hour(hour) + " i mitja";
 
-    if (minute == 31) return get_article(hour) + " " + get_hour(hour) + " i trenta-un (minuts)";
-    if (minute == 32) return get_article(hour) + " " + get_hour(hour) + " i trenta-dos (minuts)";
-    if (minute == 33) return get_article(hour) + " " + get_hour(hour) + " i trenta-tres (minuts)";
-    if (minute == 34) return get_article(hour) + " " + get_hour(hour) + " i trenta-quatre (minuts)";
-    if (minute == 35) return get_article(hour) + " " + get_hour(hour) + " i trenta-cinc (minuts)";
-    if (minute == 36) return get_article(hour) + " " + get_hour(hour) + " i trenta-sis (minuts)";
-    if (minute == 37) return get_article(hour) + " " + get_hour(hour) + " i trenta-set (minuts)";
-    if (minute == 38) return get_article(hour) + " " + get_hour(hour) + " i trenta-vuit (minuts)";
-    if (minute == 39) return  get_article(hour) + " " + get_hour(hour) + " i trenta-nou (minuts)";
-    if (minute == 40) return get_article(hour) + " " + get_hour(hour) + " i quaranta (minuts)";
-    if (minute == 41) return get_article(hour) + " " + get_hour(hour) + " i quaranta-un (minuts)";
-    if (minute == 42) return get_article(hour) + " " + get_hour(hour) + " i quaranta-dos (minuts)";
-    if (minute == 43) return get_article(hour) + " " + get_hour(hour) + " i quaranta-tres (minuts)";
-    if (minute == 44) return get_article(hour) + " " + get_hour(hour) + " i quaranta-quatre (minuts)";
-    if (minute == 45) return get_article(hour) + " " + get_hour(hour+1) + " menys quart";
+    if (minute == 31) return get_article(hour) + " " + get_hour(hour) + " menys vint-i-nou (minuts)";
+    if (minute == 32) return get_article(hour) + " " + get_hour(hour) + " menys vint-i-vuit (minuts)";
+    if (minute == 33) return get_article(hour) + " " + get_hour(hour) + " menys vint-i-set (minuts)";
+    if (minute == 34) return get_article(hour) + " " + get_hour(hour) + " menys vint-i-sis (minuts)";
+    if (minute == 35) return get_article(hour) + " " + get_hour(hour) + " menys vint-i-cinc (minuts)";
+    if (minute == 36) return get_article(hour) + " " + get_hour(hour) + " menys vint-i-quatre (minuts)";
+    if (minute == 37) return get_article(hour) + " " + get_hour(hour) + " menys vint-i-tres (minuts)";
+    if (minute == 38) return get_article(hour) + " " + get_hour(hour) + " menys vint-i-dos (minuts)";
+    if (minute == 39) return get_article(hour) + " " + get_hour(hour) + " menys vint-i-un (minuts)";
+    if (minute == 40) return get_article(hour) + " " + get_hour(hour) + " menys vint (minuts)";
+    if (minute == 41) return get_article(hour) + " " + get_hour(hour) + " menys dinou (minuts)";
+    if (minute == 42) return get_article(hour) + " " + get_hour(hour) + " menys divuit (minuts)";
+    if (minute == 43) return get_article(hour) + " " + get_hour(hour) + " menys disset (minuts)";
+    if (minute == 44) return get_article(hour) + " " + get_hour(hour) + " menys setze (minuts)";
+    if (minute == 45) return get_article(hour) + " " + get_hour(hour) + " menys quart";
 
-    if (minute == 46) return get_article(hour) + " " + get_hour(hour) + " i quaranta-sis (minuts)";
-    if (minute == 47) return get_article(hour) + " " + get_hour(hour) + " i quaranta-set (minuts)";
-    if (minute == 48) return get_article(hour) + " " + get_hour(hour) + " i quaranta-vuit (minuts)";
-    if (minute == 49) return get_article(hour) + " " + get_hour(hour) + " i quaranta-nou (minuts)";
-    if (minute == 50) return get_article(hour) + " " + get_hour(hour) + " i cinquanta (minuts)";
-    if (minute == 51) return get_article(hour) + " " + get_hour(hour) + " i cinquanta-un (minuts)";
-    if (minute == 52) return get_article(hour) + " " + get_hour(hour) + " i cinquanta-dos (minuts)";
-    if (minute == 53) return get_article(hour) + " " + get_hour(hour) + " i cinquanta-tres (minuts)";
-    if (minute == 54) return  get_article(hour) + " " + get_hour(hour) + " i cinquanta-quatre (minuts)";
-    if (minute == 55) return get_article(hour) + " " + get_hour(hour) + " i cinquanta-cinc (minuts)";
-    if (minute == 56) return get_article(hour) + " " + get_hour(hour) + " i cinquanta-sis (minuts)";
-    if (minute == 57) return get_article(hour) + " " + get_hour(hour) + " i cinquanta-set (minuts)";
-    if (minute == 58) return get_article(hour) + " " + get_hour(hour) + " i cinquanta-vuit (minuts)";
-    if (minute == 59) return get_article(hour) + " " + get_hour(hour) + " i cinquanta-nou (minuts)";
+    if (minute == 46) return get_article(hour) + " " + get_hour(hour) + " menys catorze (minuts)";
+    if (minute == 47) return get_article(hour) + " " + get_hour(hour) + " menys tretze (minuts)";
+    if (minute == 48) return get_article(hour) + " " + get_hour(hour) + " menys dotze (minuts)";
+    if (minute == 49) return get_article(hour) + " " + get_hour(hour) + " menys onze (minuts)";
+    if (minute == 50) return get_article(hour) + " " + get_hour(hour) + " menys deu (minuts)";
+    if (minute == 51) return get_article(hour) + " " + get_hour(hour) + " menys nou (minuts)";
+    if (minute == 52) return get_article(hour) + " " + get_hour(hour) + " menys vuit (minuts)";
+    if (minute == 53) return get_article(hour) + " " + get_hour(hour) + " menys set (minuts)";
+    if (minute == 54) return get_article(hour) + " " + get_hour(hour) + " menys sis (minuts)";
+    if (minute == 55) return get_article(hour) + " " + get_hour(hour) + " menys cinc (minuts)";
+    if (minute == 56) return get_article(hour) + " " + get_hour(hour) + " menys quatre (minuts)";
+    if (minute == 57) return get_article(hour) + " " + get_hour(hour) + " menys tres (minuts)";
+    if (minute == 58) return get_article(hour) + " " + get_hour(hour) + " menys dos (minuts)";
+    if (minute == 59) return get_article(hour) + " " + get_hour(hour) + " menys un (minut)";
 
 
     return "no ho sé";
