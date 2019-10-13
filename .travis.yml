@@ -3,7 +3,6 @@ node_js:
   - 7
 install:
   - sudo apt-get update -y
-  - sudo apt-get install yarnpkg -y 
-  - yarnpkg add jest
+  - npm install jest --global
 script:
-  - yarnpkg jest
+  - npm run jest
