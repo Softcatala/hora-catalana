@@ -2,7 +2,7 @@
 
 // Sistema campanar tal com està definit a la Gramàtica Essencial de la llengua catalana
 // https://geiec.iec.cat/capitol_veure.asp?id_gelc=337&capitol=28
-function get_time(hour, minute) {
+function get_time_campanar(hour, minute) {
 
     if (minute > 14)
         hour = hour + 1;
@@ -74,6 +74,49 @@ function get_time(hour, minute) {
     return "i molt de temps";
 }
 
+function get_time_rellotge(hour, minute) {
+
+    if (minute > 14)
+        hour = hour + 1;
+
+    if (minute == 0) return get_article(hour) + " " + get_hour(hour) + " en punt";
+    if (minute == 1) return get_article(hour) + " " + get_hour(hour) + " i un (minut)";
+    if (minute == 2) return get_article(hour) + " " + get_hour(hour) + " i dos (minuts)";
+    if (minute == 3) return get_article(hour) + " " + get_hour(hour) + " i tres (minuts)";
+    if (minute == 4) return get_article(hour) + " " + get_hour(hour) + " i quatre (minuts)";
+    if (minute == 5) return get_article(hour) + " " + get_hour(hour) + " i cinc (minuts)";
+    if (minute == 6) return get_article(hour) + " " + get_hour(hour) + " i sis (minuts)";
+    if (minute == 7) return get_article(hour) + " " + get_hour(hour) + " i set (minuts)";
+    if (minute == 8) return get_article(hour) + " " + get_hour(hour) + " i vuit (minuts)";
+    if (minute == 9) return  get_article(hour) + " " + get_hour(hour) + " i nou (minuts)";
+    if (minute == 10) return get_article(hour) + " " + get_hour(hour) + " i deu (minuts)";
+    if (minute == 11) return get_article(hour) + " " + get_hour(hour) + " i onze (minuts)";
+    if (minute == 12) return get_article(hour) + " " + get_hour(hour) + " i dotze (minuts)";
+    if (minute == 13) return get_article(hour) + " " + get_hour(hour) + " i tretze (minuts)";
+    if (minute == 14) return get_article(hour) + " " + get_hour(hour) + " i catorze (minuts)";
+    if (minute == 15) return get_article(hour) + " " + get_hour(hour) + " i quart";
+
+    if (minute == 16) return get_article(hour) + " " + get_hour(hour) + " i setze (minut)";
+    if (minute == 17) return get_article(hour) + " " + get_hour(hour) + " i disset (minuts)";
+    if (minute == 18) return get_article(hour) + " " + get_hour(hour) + " i divuit (minuts)";
+    if (minute == 19) return get_article(hour) + " " + get_hour(hour) + " i dinou (minuts)";
+    if (minute == 20) return get_article(hour) + " " + get_hour(hour) + " i vint (minuts)";
+    if (minute == 21) return get_article(hour) + " " + get_hour(hour) + " i vint-i-un (minuts)";
+    if (minute == 22) return get_article(hour) + " " + get_hour(hour) + " i vint-i-dos (minuts)";
+    if (minute == 23) return get_article(hour) + " " + get_hour(hour) + " i vint-i-tres (minuts)";
+    if (minute == 24) return  get_article(hour) + " " + get_hour(hour) + " i vint-i-quatre (minuts)";
+    if (minute == 25) return get_article(hour) + " " + get_hour(hour) + " i vint-i-cinc (minuts)";
+    if (minute == 26) return get_article(hour) + " " + get_hour(hour) + " i vint-i-sis (minuts)";
+    if (minute == 27) return get_article(hour) + " " + get_hour(hour) + " i vint-i-set (minuts)";
+    if (minute == 28) return get_article(hour) + " " + get_hour(hour) + " i vint-i-vuit (minuts)";
+    if (minute == 29) return get_article(hour) + " " + get_hour(hour) + " i vint-i-nou (minuts)";
+    if (minute == 30) return get_article(hour) + " " + get_hour(hour) + " i mitja";
+
+
+    return " <no disponible>";
+}
+
+
 function get_de(hour) {
 
     if (hour == 1 || hour == 13 ||
@@ -123,7 +166,7 @@ function get_text_hora(hours, minutes, seconds) {
     return hours + ":" + minutes + ":" + seconds;
 }
 
-function get_all_times(hours, min) {
+function get_all_times(hours, min, campanar) {
 
     var list = "";
     for (min = 0; min <= 59; min++) {
@@ -133,7 +176,8 @@ function get_all_times(hours, min) {
         else {
             var m = min;
         }
-        list += hours + ":" + m + " > " + get_time(hours, min) + "<br>";
+        var text = campanar ? get_time_campanar(hours, min) : get_time_rellotge(hours, min);
+        list += hours + ":" + m + " > " + text  + "<br>";
     }
     return list;
 }
@@ -148,13 +192,18 @@ function start_timer() {
             var minutes = today.getMinutes();
             var seconds = today.getSeconds();
 
-            var text = get_time(hours, minutes) + (" (sistema campanar)");
+            var text = get_time_campanar(hours, minutes) + (" (sistema campanar)");
             var element = document.getElementById("hora");
             element.innerHTML = get_text_hora(hours, minutes, seconds);
 
-            element = document.getElementById("text");
+            element = document.getElementById("text_campanar");
             element.innerHTML = text;
-            element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes);
+            element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, true);
+
+            text = get_time_rellotge(hours, minutes) + (" (sistema de rellotge)");
+            element = document.getElementById("text_rellotge");
+            element.innerHTML = text;
+            element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, false);
 
          }, 1000);
 }
