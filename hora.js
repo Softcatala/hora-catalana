@@ -76,9 +76,6 @@ function get_time_campanar(hour, minute) {
 
 function get_time_rellotge(hour, minute) {
 
-    if (minute > 14)
-        hour = hour + 1;
-
     if (minute == 0) return get_article(hour) + " " + get_hour(hour) + " en punt";
     if (minute == 1) return get_article(hour) + " " + get_hour(hour) + " i un (minut)";
     if (minute == 2) return get_article(hour) + " " + get_hour(hour) + " i dos (minuts)";
