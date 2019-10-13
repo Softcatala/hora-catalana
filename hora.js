@@ -1,3 +1,4 @@
+module.exports = get_time_campanar;
 
 
 // Sistema campanar tal com està definit a la Gramàtica Essencial de la llengua catalana

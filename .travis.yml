@@ -4,5 +4,6 @@ node_js:
 install:
   - sudo apt-get update -y
   - sudo apt-get install yarnpkg -y 
+  - yarnpkg add jest
 script:
   - yarnpkg jest
