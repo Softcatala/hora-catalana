@@ -1,8 +1,8 @@
 language: node_js
 node_js:
-  - 7
+  - 8
 install:
   - sudo apt-get update -y
-  - npm install jest
+  - yarn add jest
 script:
-  - npm run jest
+  - yarn jest
