@@ -1,6 +1,6 @@
 
 
-// Sistema campanar tal com està definit a la Gramàtica Essencial de la llengua catalan
+// Sistema campanar tal com està definit a la Gramàtica Essencial de la llengua catalana
 // https://geiec.iec.cat/capitol_veure.asp?id_gelc=337&capitol=28
 function get_time(hour, minute) {
 
