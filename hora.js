@@ -14,8 +14,8 @@ function get_time(hour, minute) {
     if (minute == 4) return get_article(hour) + " " + get_hour(hour) + " i quatre (minuts)";
     if (minute == 5) return get_article(hour) + " " + get_hour(hour) + " i cinc (minuts)";
     if (minute == 6) return get_article(hour) + " " + get_hour(hour) + " i sis (minuts)";
-    if (minute == 7) return get_article(hour) + " " + get_hour(hour) + " i set (minuts)";
-    if (minute == 8) return get_article(hour) + " " + get_hour(hour) + " i vuit (minuts)";
+    if (minute == 7) return "Mig quart " + get_de(hour) + get_hour(hour);
+    if (minute == 8) return "Mig quart " + get_de(hour) + get_hour(hour);
     if (minute == 9) return  get_article(hour) + " " + get_hour(hour) + " i nou (minuts)";
     if (minute == 10) return get_article(hour) + " " + get_hour(hour) + " i deu (minuts)";
     if (minute == 11) return get_article(hour) + " " + get_hour(hour) + " i onze (minuts)";
@@ -30,8 +30,8 @@ function get_time(hour, minute) {
     if (minute == 19) return "Un quart i quatre (minuts) " + get_de(hour) + get_hour(hour);
     if (minute == 20) return "Un quart i cinc (minuts) " + get_de(hour) + get_hour(hour);
     if (minute == 21) return "Un quart i sis (minuts) " + get_de(hour) + get_hour(hour);
-    if (minute == 22) return "Un quart i set (minuts) " + get_de(hour) + get_hour(hour);
-    if (minute == 23) return "Un quart i vuit (minuts) " + get_de(hour) + get_hour(hour);
+    if (minute == 22) return "Un quart i mig " + get_de(hour) + get_hour(hour);
+    if (minute == 23) return "Un quart i mig " + get_de(hour) + get_hour(hour);
     if (minute == 24) return "Un quart i nou (minuts) " + get_de(hour) + get_hour(hour);
     if (minute == 25) return "Un quart i deu (minuts) " + get_de(hour) + get_hour(hour);
     if (minute == 26) return "Un quart i onze (minuts) " + get_de(hour) + get_hour(hour);
@@ -46,8 +46,8 @@ function get_time(hour, minute) {
     if (minute == 34) return "Dos quarts i quatre (minuts) " + get_de(hour) + get_hour(hour);
     if (minute == 35) return "Dos quarts i cinc (minuts) " + get_de(hour) + get_hour(hour);
     if (minute == 36) return "Dos quarts i sis (minuts) " + get_de(hour) + get_hour(hour);
-    if (minute == 37) return "Dos quarts i set (minuts) " + get_de(hour) + get_hour(hour);
-    if (minute == 38) return "Dos quarts i vuit (minuts) " + get_de(hour) + get_hour(hour);
+    if (minute == 37) return "Dos quarts i mig " + get_de(hour) + get_hour(hour);
+    if (minute == 38) return "Dos quarts i mig " + get_de(hour) + get_hour(hour);
     if (minute == 39) return "Dos quarts i nou (minuts) " + get_de(hour) + get_hour(hour);
     if (minute == 40) return "Dos quarts i deu (minuts) " + get_de(hour) + get_hour(hour);
     if (minute == 41) return "Dos quarts i onze (minuts) " + get_de(hour) + get_hour(hour);
@@ -62,8 +62,8 @@ function get_time(hour, minute) {
     if (minute == 49) return "Tres quarts i quatre (minuts) " + get_de(hour) + get_hour(hour);
     if (minute == 50) return "Tres quarts i cinc (minuts) " + get_de(hour) + get_hour(hour);
     if (minute == 51) return "Tres quarts i sis (minuts) " + get_de(hour) + get_hour(hour);
-    if (minute == 52) return "Tres quarts i set (minuts) " + get_de(hour) + get_hour(hour);
-    if (minute == 53) return "Tres quarts i vuit (minut) " + get_de(hour) + get_hour(hour);
+    if (minute == 52) return "Tres quarts i mig " + get_de(hour) + get_hour(hour);
+    if (minute == 53) return "Tres quarts i mig " + get_de(hour) + get_hour(hour);
     if (minute == 54) return "Tres quarts i nou (minuts) " + get_de(hour) + get_hour(hour);
     if (minute == 55) return "Tres quarts i deu (minuts) " + get_de(hour) + get_hour(hour);
     if (minute == 56) return "Tres quarts i onze (minuts) " + get_de(hour) + get_hour(hour);
