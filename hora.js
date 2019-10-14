@@ -98,7 +98,7 @@ function get_time_rellotge(hour, minute) {
     if (minute == 14) return get_article(hour) + " " + get_hour(hour) + " i catorze (minuts)";
     if (minute == 15) return get_article(hour) + " " + get_hour(hour) + " i quart";
 
-    if (minute == 16) return get_article(hour) + " " + get_hour(hour) + " i setze (minut)";
+    if (minute == 16) return get_article(hour) + " " + get_hour(hour) + " i setze (minuts)";
     if (minute == 17) return get_article(hour) + " " + get_hour(hour) + " i disset (minuts)";
     if (minute == 18) return get_article(hour) + " " + get_hour(hour) + " i divuit (minuts)";
     if (minute == 19) return get_article(hour) + " " + get_hour(hour) + " i dinou (minuts)";
@@ -231,12 +231,12 @@ function start_timer() {
 
             element = document.getElementById("text_campanar");
             element.innerHTML = text;
-            element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, true);
+            //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, true);
 
             text = get_time_rellotge(hours, minutes) + (" (sistema de rellotge)");
             element = document.getElementById("text_rellotge");
             element.innerHTML = text;
-            element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, false);
+            //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, false);
 
          }, 1000);
 }
