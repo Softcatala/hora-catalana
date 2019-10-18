@@ -25,14 +25,14 @@ function get_time_campanar_tradicional(hour, minute) {
     if (minute == 35 || minute == 36) return "Dos quarts ben tocats " + get_de(hour) + get_hour(hour);
     if (minute == 37 || minute == 38) return "Dos quarts i mig " + get_de(hour) + get_hour(hour);
     if (minute == 39 || minute == 40 || minute == 41) return "Dos quarts i mig tocats " + get_de(hour) + get_hour(hour);
-    if (minute == 42 || minute == 43) return "Dos quarts i mig tocats " + get_de(hour) + get_hour(hour);
+    if (minute == 42 || minute == 43) return "Dos quarts i mig ben tocats " + get_de(hour) + get_hour(hour);
     if (minute == 44 || minute == 45 || minute == 46) return "Tres quarts " + get_de(hour) + get_hour(hour);
 
     if (minute == 47 || minute == 48 || minute == 49) return "Tres quarts tocats " + get_de(hour) + get_hour(hour);
     if (minute == 50 || minute == 51) return "Tres quarts ben tocats " + get_de(hour) + get_hour(hour);
     if (minute == 52 || minute == 53) return "Tres quarts i mig " + get_de(hour) + get_hour(hour);
     if (minute == 54 || minute == 55 || minute == 56) return "Tres quarts i mig tocats " + get_de(hour) + get_hour(hour);
-    if (minute == 57 || minute == 58) return "Tres quarts i mig tocats " + get_de(hour) + get_hour(hour);
+    if (minute == 57 || minute == 58) return "Tres quarts i mig ben tocats " + get_de(hour) + get_hour(hour);
     if (minute == 59) return get_article(hour) + " " + get_hour(hour)
 
     return "no ho sé";
