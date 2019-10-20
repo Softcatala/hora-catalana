@@ -290,7 +290,7 @@ function start_timer() {
             text = get_time_campanar_tradicional(hours, minutes) + (" (sistema campanar tradiccional)");
             element = document.getElementById("text_campanar_tradicional");
             element.innerHTML = text;
-            element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'campanar_tradiccional');
+            //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'campanar_tradiccional');
 
          }, 1000);
 }
