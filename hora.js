@@ -264,34 +264,38 @@ function get_all_times(hours, min, sistema) {
     return list;
 }
 
+function show_timer() {
+
+    var today = new Date();
+    var hours = today.getHours();
+    var minutes = today.getMinutes();
+    var seconds = today.getSeconds();
+
+    var text = get_time_campanar(hours, minutes) + (" (sistema campanar)");
+    var element = document.getElementById("hora");
+    element.innerHTML = get_text_hora(hours, minutes, seconds);
+
+    element = document.getElementById("text_campanar");
+    element.innerHTML = text;
+    //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'camapanar');
+
+    text = get_time_rellotge(hours, minutes) + (" (sistema de rellotge)");
+    element = document.getElementById("text_rellotge");
+    element.innerHTML = text;
+    //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'rellotge');
+
+    text = get_time_campanar_tradicional(hours, minutes) + (" (sistema campanar tradiccional)");
+    element = document.getElementById("text_campanar_tradicional");
+    element.innerHTML = text;
+    //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'campanar_tradiccional');
+}
+
 
 function start_timer() {
+    show_timer();
     
     const interval = setInterval(function() {
-
-            var today = new Date();
-            var hours = today.getHours();
-            var minutes = today.getMinutes();
-            var seconds = today.getSeconds();
-
-            var text = get_time_campanar(hours, minutes) + (" (sistema campanar)");
-            var element = document.getElementById("hora");
-            element.innerHTML = get_text_hora(hours, minutes, seconds);
-
-            element = document.getElementById("text_campanar");
-            element.innerHTML = text;
-            //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'camapanar');
-
-            text = get_time_rellotge(hours, minutes) + (" (sistema de rellotge)");
-            element = document.getElementById("text_rellotge");
-            element.innerHTML = text;
-            //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'rellotge');
-
-            text = get_time_campanar_tradicional(hours, minutes) + (" (sistema campanar tradiccional)");
-            element = document.getElementById("text_campanar_tradicional");
-            element.innerHTML = text;
-            //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'campanar_tradiccional');
-
+            show_timer();
          }, 1000);
 }
 

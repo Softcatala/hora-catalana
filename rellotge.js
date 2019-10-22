@@ -77,7 +77,8 @@ function start_clock() {
     var ctx = canvas.getContext("2d");
     var radius = canvas.height / 2;
     ctx.translate(radius, radius);
-    radius = radius * 0.90
+    radius = radius * 0.90;
+    drawClock(ctx, radius);
 
     const interval = setInterval(function() {
 
