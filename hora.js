@@ -271,7 +271,7 @@ function show_timer() {
     var minutes = today.getMinutes();
     var seconds = today.getSeconds();
 
-    var text = get_time_campanar(hours, minutes) + (" (sistema campanar)");
+    var text = get_time_campanar(hours, minutes);
     var element = document.getElementById("hora");
     element.innerHTML = get_text_hora(hours, minutes, seconds);
 
@@ -279,12 +279,12 @@ function show_timer() {
     element.innerHTML = text;
     //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'camapanar');
 
-    text = get_time_rellotge(hours, minutes) + (" (sistema de rellotge)");
+    text = get_time_rellotge(hours, minutes);
     element = document.getElementById("text_rellotge");
     element.innerHTML = text;
     //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'rellotge');
 
-    text = get_time_campanar_tradicional(hours, minutes) + (" (sistema campanar tradiccional)");
+    text = get_time_campanar_tradicional(hours, minutes);
     element = document.getElementById("text_campanar_tradicional");
     element.innerHTML = text;
     //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'campanar_tradiccional');
