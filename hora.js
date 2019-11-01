@@ -44,7 +44,7 @@ function get_time_campanar_tradicional(hour, minute) {
 // https://geiec.iec.cat/capitol_veure.asp?id_gelc=337&capitol=28
 function get_time_campanar(hour, minute) {
 
-    if (minute > 14)
+    if (minute > 14 || minute == 7 || minute == 8)
         hour = hour + 1;
 
     if (minute == 0) return get_article(hour) + " " + get_hour(hour) + " en punt";
