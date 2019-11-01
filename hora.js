@@ -7,8 +7,8 @@ function get_time_campanar_tradicional(hour, minute) {
         hour = hour + 1;
 
     if (minute == 0 || minute == 1) return get_article(hour) + " " + get_hour(hour) + " en punt";
-    if (minute == 2 || minute == 3 || minute == 4) return get_article(hour) + " " + get_hour(hour) + " tocades";
-    if (minute == 5 || minute == 6) return get_article(hour) + " " + get_hour(hour) + " ben tocades";
+    if (minute == 2 || minute == 3 || minute == 4) return get_article(hour) + " " + get_hour(hour) + " " + get_tocades(hour);
+    if (minute == 5 || minute == 6) return get_article(hour) + " " + get_hour(hour) + " ben " + get_tocades(hour);
     if (minute == 7 || minute == 8) return "Mig quart " + get_de(hour) + get_hour(hour);
     if (minute == 9 || minute == 10 || minute == 11) return "Mig quart tocat " + get_de(hour) + get_hour(hour);
     if (minute == 12 || minute == 13) return "Mig quart ben tocat " + get_de(hour) + get_hour(hour);
@@ -205,6 +205,15 @@ function get_article(hour) {
         return "La";
 
     return "Les";
+}
+
+
+function get_tocades(hour) {
+
+    if (hour == 1 || hour == 13)
+        return "tocada";
+
+    return "tocades";
 }
 
 function get_article_lower(hour) {
