@@ -8,6 +8,7 @@ test('get_time_campanar tests', () => {
     expect(get_time_campanar(1,5)).toBe("La una i cinc (minuts)");
     expect(get_time_campanar(1,6)).toBe("La una i sis (minuts)");
     expect(get_time_campanar(1,7)).toBe("Mig quart d'una");
+    expect(get_time_campanar(1,8)).toBe("Mig quart d'una");
     expect(get_time_campanar(1,9)).toBe("La una i nou (minuts)");
     expect(get_time_campanar(1,10)).toBe("La una i deu (minuts)");
     expect(get_time_campanar(1,11)).toBe("La una i onze (minuts)");
