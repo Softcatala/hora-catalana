@@ -18,7 +18,7 @@ function get_time_campanar_tradicional(hour, minute) {
     if (minute == 20 || minute == 21) return "Un quart ben tocat " + get_de(hour) + get_hour(hour);
     if (minute == 22 || minute == 23) return "Un quart i mig " + get_de(hour) + get_hour(hour);
     if (minute == 24 || minute == 25 || minute == 26) return "Un quart i mig tocat " + get_de(hour) + get_hour(hour);
-    if (minute == 27 || minute == 28) return "Un quart i mig tocat " + get_de(hour) + get_hour(hour);
+    if (minute == 27 || minute == 28) return "Un quart i mig ben tocat " + get_de(hour) + get_hour(hour);
     if (minute == 29 || minute == 30 || minute == 31) return "Dos quarts " + get_de(hour) + get_hour(hour);
 
     if (minute == 32 || minute == 33 || minute == 34) return "Dos quarts tocats " + get_de(hour) + get_hour(hour);
