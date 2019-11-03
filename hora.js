@@ -263,7 +263,7 @@ function get_all_times(hours, min, sistema) {
         if (sistema == 'campanar')
             text = get_time_campanar(hours, min);
 
-        if (sistema == 'campanar_tradiccional')
+        if (sistema == 'campanar_tradicional')
             text = get_time_campanar_tradicional(hours, min);
         else
             text = get_time_rellotge(hours, min);
@@ -286,7 +286,7 @@ function show_timer() {
 
     element = document.getElementById("text_campanar");
     element.innerHTML = text;
-    //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'camapanar');
+    //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'campanar');
 
     text = get_time_rellotge(hours, minutes);
     element = document.getElementById("text_rellotge");
@@ -296,7 +296,7 @@ function show_timer() {
     text = get_time_campanar_tradicional(hours, minutes);
     element = document.getElementById("text_campanar_tradicional");
     element.innerHTML = text;
-    //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'campanar_tradiccional');
+    //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'campanar_tradicional');
 }
 
 
