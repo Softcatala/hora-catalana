@@ -1,4 +1,4 @@
-module.exports = {get_time_campanar, get_time_campanar_tradicional, get_time_rellotge};
+module.exports = {get_time_campanar, get_time_campanar_tradicional, get_time_rellotge, get_text_hora};
 
 // Sistema campanar tradicional
 function get_time_campanar_tradicional(hour, minute) {
