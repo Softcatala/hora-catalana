@@ -12,7 +12,26 @@
     <p>Sistema campanar: <span id="text_campanar"></span></p>
     <p>Sistema campanar tradicional: <span id="text_campanar_tradicional"></span></p>
 
+
+    <p>També podeu consultar una hora específica</p>
+    <form>
+        <p><input type="text" size="2" name="requested_hours" id="requested_hours"> : 
+           <input type="text" size="2" name="requested_minutes" id="requested_minutes">
+           <input type="submit" value="Consulta" 
+            onclick="show_requested_time(document.getElementById('requested_hours').value, 
+                     document.getElementById('requested_minutes').value);return false;">
+        </p>
+    </form>
+    <div id="requested_result" style="display:none">
+        <p>Sistema rellotge: <span id="requested_text_rellotge"></span></p>
+        <p>Sistema campanar: <span id="requested_text_campanar"></span></p>
+        <p>Sistema campanar tradicional: <span id="requested_text_campanar_tradicional"></span></p>
+    </div>
+   
+
     <canvas id="canvas" width="200" height="200" style="background-color:#333"/>
+
+
     </body>
 </html>
 

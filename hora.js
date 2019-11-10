@@ -299,6 +299,32 @@ function show_timer() {
     //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'campanar_tradicional');
 }
 
+function show_requested_time(text_hours, text_minutes) {
+
+    var hours = parseInt(text_hours);
+    var minutes = parseInt(text_minutes);
+
+    if ((hours < 0 || hours > 23) || (minutes < 0  || minutes > 60))
+    {
+        return;
+    }
+
+    var text = get_time_campanar(hours, minutes);
+    element = document.getElementById("requested_text_campanar");
+    element.innerHTML = text;
+
+    text = get_time_rellotge(hours, minutes);
+    element = document.getElementById("requested_text_rellotge");
+    element.innerHTML = text;
+
+    text = get_time_campanar_tradicional(hours, minutes);
+    element = document.getElementById("requested_text_campanar_tradicional");
+    element.innerHTML = text;
+
+    element = document.getElementById("requested_text_campanar");
+    var x = document.getElementById("requested_result");
+    x.style.display = "block";
+}
 
 function start_timer() {
     show_timer();
