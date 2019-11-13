@@ -304,7 +304,7 @@ function show_requested_time(text_hours, text_minutes) {
     var hours = parseInt(text_hours);
     var minutes = parseInt(text_minutes);
 
-    if ((hours < 0 || hours > 23) || (minutes < 0  || minutes > 60))
+    if ((isNaN(hours) || hours < 0 || hours > 23) || (isNaN(minutes) || minutes < 0  || minutes > 59))
     {
         return;
     }
