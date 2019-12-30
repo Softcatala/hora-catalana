@@ -321,6 +321,23 @@ function show_requested_time(text_hours, text_minutes) {
 
 var time_timer_id = null;
 
+function speak_text(id, element) {
+
+    text = document.getElementById(id).innerHTML;
+    hash = md5(text).substring(0, 8);
+    
+    document.getElementById(element).disabled = true;
+    url = `https://www.softcatala.org/veu/speak/?text=${text}&token=${hash}`;
+    aud = new Audio(url)
+
+    aud.onended = function() {
+        document.getElementById(element).disabled = false;
+    }; 
+
+    aud.play();
+
+}
+
 function start_timer() {
     show_timer();
     
