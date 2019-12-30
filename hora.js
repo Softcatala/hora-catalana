@@ -279,9 +279,14 @@ function show_timer() {
     var hours = today.getHours();
     var minutes = today.getMinutes();
     var seconds = today.getSeconds();
+    show_hour(hours, minutes, seconds);
+}
+
+function show_hour(hours, minutes, seconds) {
 
     var text = get_time_campanar(hours, minutes);
     var element = document.getElementById("hora");
+
     element.innerHTML = get_text_hora(hours, minutes, seconds);
 
     element = document.getElementById("text_campanar");
@@ -299,6 +304,7 @@ function show_timer() {
     //element.innerHTML += "<p>Depuració</p>" + get_all_times(hours, minutes, 'campanar_tradicional');
 }
 
+
 function show_requested_time(text_hours, text_minutes) {
 
     var hours = parseInt(text_hours);
@@ -309,28 +315,22 @@ function show_requested_time(text_hours, text_minutes) {
         return;
     }
 
-    var text = get_time_campanar(hours, minutes);
-    element = document.getElementById("requested_text_campanar");
-    element.innerHTML = text;
-
-    text = get_time_rellotge(hours, minutes);
-    element = document.getElementById("requested_text_rellotge");
-    element.innerHTML = text;
-
-    text = get_time_campanar_tradicional(hours, minutes);
-    element = document.getElementById("requested_text_campanar_tradicional");
-    element.innerHTML = text;
-
-    element = document.getElementById("requested_text_campanar");
-    var x = document.getElementById("requested_result");
-    x.style.display = "block";
+    stop_timer();
+    show_hour(hours, minutes, 0);
 }
+
+var time_timer_id = null;
 
 function start_timer() {
     show_timer();
     
-    const interval = setInterval(function() {
+    time_timer_id = setInterval(function() {
             show_timer();
          }, 1000);
+}
+
+function stop_timer() {
+    clearInterval(time_timer_id);
+    time_timer_id = null;
 }
 

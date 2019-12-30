@@ -1,7 +1,17 @@
-function drawClock(ctx, radius) {
+
+function drawClock(ctx, radius, hour, minute, second) {
   drawFace(ctx, radius);
   drawNumbers(ctx, radius);
-  drawTime(ctx, radius);
+  drawTime(ctx, radius, hour, minute, second
+);
+}
+
+function drawClockCurrentTime(ctx, radius) {
+  var now = new Date();
+  var hour = now.getHours();
+  var minute = now.getMinutes();
+  var second = now.getSeconds();
+  drawClock(ctx, radius, hour, minute, second);
 }
 
 function drawFace(ctx, radius) {
@@ -41,11 +51,7 @@ function drawNumbers(ctx, radius) {
     }
 }
 
-function drawTime(ctx, radius){
-    var now = new Date();
-    var hour = now.getHours();
-    var minute = now.getMinutes();
-    var second = now.getSeconds();
+function drawTime(ctx, radius, hour, minute, second){
     //hour
     hour=hour%12;
     hour=(hour*Math.PI/6)+
@@ -71,20 +77,49 @@ function drawHand(ctx, pos, length, width) {
     ctx.rotate(-pos);
 }
 
+var clock_timer_id = null;
+var current_time_btn_disabled = true;
+var ctx;
+var radius;
+
 function start_clock() {
 
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    var radius = canvas.height / 2;
-    ctx.translate(radius, radius);
-    radius = radius * 0.90;
-    drawClock(ctx, radius);
+    if (typeof ctx === 'undefined') {
+        var canvas = document.getElementById("canvas");
+        ctx = canvas.getContext("2d");
+        radius = canvas.height / 2;
+        ctx.translate(radius, radius);
+        radius = radius * 0.90;
+    }
 
-    const interval = setInterval(function() {
+    drawClockCurrentTime(ctx, radius);
+    current_time_btn_disabled = true;
 
-        drawClock(ctx, radius);
+    clock_timer_id = setInterval(function() {
+
+        drawClockCurrentTime(ctx, radius);
 
     }, 1000);
+}
+
+function set_clock(text_hours, text_minutes) {
+
+    var hours = parseInt(text_hours);
+    var minutes = parseInt(text_minutes);
+
+    if ((isNaN(hours) || hours < 0 || hours > 23) || (isNaN(minutes) || minutes < 0  || minutes > 59))
+    {
+        return;
+    }
+
+    stop_clock();
+    drawClock(ctx, radius, hours, minutes, 0);
+}
+
+function stop_clock() {
+    clearInterval(clock_timer_id);
+    clock_timer_id = null;
+    current_time_btn_disabled = false;
 }
 
 

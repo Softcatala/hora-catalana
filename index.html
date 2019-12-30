@@ -5,7 +5,7 @@
         <script type="text/javascript" src="rellotge.js"></script>
     </head>
 
-    <body onload="start_timer();start_clock();">
+    <body onload="start_timer();start_clock();document.getElementById('current_time').disabled = current_time_btn_disabled;">
 
     <p id="hora">Hora</p> 
     <p>Sistema rellotge: <span id="text_rellotge"></span></p>
@@ -15,20 +15,20 @@
 
     <p>També podeu consultar una hora específica</p>
     <form>
-        <p><input type="text" size="2" name="requested_hours" id="requested_hours"> : 
+        <p>
+           <input type="text" size="2" id="requested_hours"> : 
            <input type="text" size="2" name="requested_minutes" id="requested_minutes">
-           <input type="submit" value="Consulta" 
-            onclick="show_requested_time(document.getElementById('requested_hours').value, 
-                     document.getElementById('requested_minutes').value);return false;">
-        </p>
-    </form>
-    <div id="requested_result" style="display:none">
-        <p>Sistema rellotge: <span id="requested_text_rellotge"></span></p>
-        <p>Sistema campanar: <span id="requested_text_campanar"></span></p>
-        <p>Sistema campanar tradicional: <span id="requested_text_campanar_tradicional"></span></p>
-    </div>
-   
+           <input type="submit" value="Consulta" id = 'consulta'
+            onclick="set_clock(document.getElementById('requested_hours').value, document.getElementById('requested_minutes').value);
+                     show_requested_time(document.getElementById('requested_hours').value,
+                        document.getElementById('requested_minutes').value);
+                        document.getElementById('current_time').disabled = current_time_btn_disabled;
+                        return false;">
 
+           <input type="submit" value="Hora actual" id="current_time" onclick="start_timer();start_clock();
+                        document.getElementById('current_time').disabled = current_time_btn_disabled;return false;">
+           </p>
+    </form>
     <canvas id="canvas" width="200" height="200" style="background-color:#333"/>
 
 
