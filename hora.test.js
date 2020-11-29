@@ -72,7 +72,7 @@ test('get_time_rellotge tests', () => {
 
 test('get_time_campanar_tradicional tests', () => {
     expect(get_time_campanar_tradicional(2,0)).toBe("Les dues en punt");
-    expect(get_time_campanar_tradicional(2,1)).toBe("Les dues en punt");
+    expect(get_time_campanar_tradicional(2,1)).toBe("Les dues");
     expect(get_time_campanar_tradicional(2,2)).toBe("Les dues tocades");
     expect(get_time_campanar_tradicional(2,3)).toBe("Les dues tocades");
     expect(get_time_campanar_tradicional(2,4)).toBe("Les dues tocades");
