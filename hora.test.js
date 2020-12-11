@@ -216,5 +216,6 @@ test('read_campanar tests', () => {
     expect(read_campanar("Les dues i cinc")).toBe("2:05");
     expect(read_campanar("Les nou i dotze")).toBe("9:12");
     expect(read_campanar("Mig quart de tres")).toBe("3:07");
+    expect(read_campanar("Un quart de cinc")).toBe("5:15");
 });
 

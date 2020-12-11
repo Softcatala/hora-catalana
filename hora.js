@@ -414,13 +414,22 @@ function read_campanar(input) {
         return format_time(hour, minute)
     }
 
-    var primer_mig_quart = "(mig quart)(.*?)(de)(.*?)(una|dues|tres|quatre|cinc|sis|set|vuit|nou|deu|onze|dotze)";
+    var primer_mig_quart = "(mig|un)(.*?)(quart)(.*?)(de)(.*?)(una|dues|tres|quatre|cinc|sis|set|vuit|nou|deu|onze|dotze)";
     var result = input.match(primer_mig_quart);
 
     if (result != null) {
-        const HOUR_POS = 5;
+        const HOUR_POS = 7;
+        const QUART_POS = 1;
+
+        quart = result[QUART_POS]
         hour = read_hour(result[HOUR_POS])
-        minute = "7"
+ 
+        if (quart == "mig")
+            minute = 7;
+        else
+            minute = 15;
+
+        console.log(minute)
         return format_time(hour, minute)
     }
     
