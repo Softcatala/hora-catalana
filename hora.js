@@ -399,9 +399,8 @@ function format_time(hour, minute) {
  
 }
 
-function read_campanar(input) {
+function _campanar_primer_quart(input) {
 
-    input = input.toLowerCase();
     var primer_quart = "(les|la)?(.*?)(una|dues|tres|quatre|cinc|sis|set|vuit|nou|deu|onze|dotze)(.*?)" +
                        "(punt|una|dues|tres|quatre|cinc|sis|set|vuit|nou|deu|onze|dotze|treze|catorze)";
     var result = input.match(primer_quart);
@@ -429,10 +428,17 @@ function read_campanar(input) {
         else
             minute = 15;
 
-        console.log(minute)
         return format_time(hour, minute)
     }
-    
+
+    return ""
+}
+
+function read_campanar(input) {
+
+    input = input.toLowerCase();
+    result = _campanar_primer_quart(input);
+    if (result) return result;
     return ""
 }
 
