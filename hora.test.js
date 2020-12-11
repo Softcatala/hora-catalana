@@ -2,6 +2,7 @@ const get_time_campanar = require('./hora.js').get_time_campanar;
 const get_time_campanar_tradicional = require('./hora.js').get_time_campanar_tradicional;
 const get_time_rellotge = require('./hora.js').get_time_rellotge;
 const get_text_hora = require('./hora.js').get_text_hora;
+const read_campanar = require('./hora.js').read_campanar;
 
 test('get_time_rellotge tests', () => {
     expect(get_time_rellotge(23,0)).toBe("Les onze en punt");
@@ -207,3 +208,13 @@ test('get_text_hora tests', () => {
     expect(get_text_hora(1,1,1)).toBe("1:01:01");
     expect(get_text_hora(23,10,12)).toBe("23:10:12");
 });
+
+
+
+test('read_campanar tests', () => {
+    expect(read_campanar("La una en punt")).toBe("1:00");
+    expect(read_campanar("Les dues i cinc")).toBe("2:05");
+    expect(read_campanar("Les nou i dotze")).toBe("9:12");
+    expect(read_campanar("Mig quart de tres")).toBe("3:07");
+});
+

@@ -1,4 +1,4 @@
-module.exports = {get_time_campanar, get_time_campanar_tradicional, get_time_rellotge, get_text_hora};
+module.exports = {get_time_campanar, get_time_campanar_tradicional, get_time_rellotge, get_text_hora, read_campanar};
 
 // Sistema campanar tradicional
 function get_time_campanar_tradicional(hour, minute) {
@@ -351,4 +351,81 @@ function stop_timer() {
     clearInterval(time_timer_id);
     time_timer_id = null;
 }
+
+function read_hour(hour) {
+
+    if (hour == "una") return 1;
+    if (hour == "dos" || hour == "dues") return 2;
+    if (hour == "tres")  return 3;
+    if (hour == "quatre")  return 4;
+    if (hour == "cinc")  return 5;
+    if (hour == "sis")  return 6;
+    if (hour == "set") return 7;
+    if (hour == "vuit") return 8;
+    if (hour == "nou") return 9;
+    if (hour == "deu") return 10;
+    if (hour == "onze") return 11;
+    if (hour == "dotze") return 12;
+
+    return "no sé noi"
+}
+
+
+function read_minute(hour) {
+
+    if (hour == "punt") return 0;
+    if (hour == "un") return 1;
+    if (hour == "dos") return 2;
+    if (hour == "tres")  return 3;
+    if (hour == "quatre")  return 4;
+    if (hour == "cinc")  return 5;
+    if (hour == "sis")  return 6;
+    if (hour == "set") return 7;
+    if (hour == "vuit") return 8;
+    if (hour == "nou") return 9;
+    if (hour == "deu") return 10;
+    if (hour == "onze") return 11;
+    if (hour == "dotze") return 12;
+    if (hour == "tretze") return 13;
+    if (hour == "catorze") return 14;
+
+    return "no sé noi"
+}
+
+function format_time(hour, minute) {
+    if (minute < 10) minute = "0" + minute;
+    time = hour + ":" + minute
+    return time
+ 
+}
+
+function read_campanar(input) {
+
+    input = input.toLowerCase();
+    var primer_quart = "(les|la)?(.*?)(una|dues|tres|quatre|cinc|sis|set|vuit|nou|deu|onze|dotze)(.*?)" +
+                       "(punt|una|dues|tres|quatre|cinc|sis|set|vuit|nou|deu|onze|dotze|treze|catorze)";
+    var result = input.match(primer_quart);
+    if (result != null) {
+        const HOUR_POS = 3;
+        const MINUTE_POS = 5;
+
+        hour = read_hour(result[HOUR_POS])
+        minute = read_minute(result[MINUTE_POS])
+        return format_time(hour, minute)
+    }
+
+    var primer_mig_quart = "(mig quart)(.*?)(de)(.*?)(una|dues|tres|quatre|cinc|sis|set|vuit|nou|deu|onze|dotze)";
+    var result = input.match(primer_mig_quart);
+
+    if (result != null) {
+        const HOUR_POS = 5;
+        hour = read_hour(result[HOUR_POS])
+        minute = "7"
+        return format_time(hour, minute)
+    }
+    
+    return ""
+}
+
+
 
