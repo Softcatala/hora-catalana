@@ -413,7 +413,7 @@ function _campanar_primer_quart(input) {
         return format_time(hour, minute)
     }
 
-    var primer_mig_quart = "(mig|un)(.*?)(quart)(.*?)(de)(.*?)(una|dues|tres|quatre|cinc|sis|set|vuit|nou|deu|onze|dotze)";
+    var primer_mig_quart = "(mig|un)(\\s*?)(quart)(\\s*?)(de)(\\s*?)(una|dues|tres|quatre|cinc|sis|set|vuit|nou|deu|onze|dotze)";
     var result = input.match(primer_mig_quart);
 
     if (result != null) {
@@ -439,6 +439,33 @@ function read_campanar(input) {
     input = input.toLowerCase();
     result = _campanar_primer_quart(input);
     if (result) return result;
+
+    var quarts = "(un)(\\s*?)(quart)(\\s*?)(i)(\\s*?)(un|dos|tres|quatre|cinc|sis|set|vuit|nou|deu|onze|dotze)" +
+                "(.*?)(de)(\\s*?)(una|dues|tres|quatre|cinc|sis|set|vuit|nou|deu|onze|dotze)(.*?)";
+
+    var result = input.match(quarts);
+    console.log(result);
+
+    if (result != null) {
+        const QUARTS_POS = 1;
+        const MINUTE_POS = 7;
+        const HOUR_POS = 11;
+
+        quarts = result[QUARTS_POS]
+        hour = read_hour(result[HOUR_POS])
+ 
+        if (quarts == "un")
+            minute = 15;
+        else
+            minute = 0
+
+        minute += read_minute(result[MINUTE_POS])
+
+        return format_time(hour, minute)
+    }
+
+
+
     return ""
 }
 
