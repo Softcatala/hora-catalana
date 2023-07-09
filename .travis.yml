@@ -1,8 +1,0 @@
-language: node_js
-node_js:
-  - 14
-install:
-  - sudo apt-get update -y
-  - yarn add jest
-script:
-  - yarn jest
